@@ -143,10 +143,10 @@ body {
   font-weight: 200;
   color: #3e5869;
 }
-#root{
+#root {
   padding-bottom: 200px;
 }
-body{
+body {
   background-image: url("./image/Gray-world-map.jpg");
   /* background-size: 100; */
 }
@@ -199,9 +199,8 @@ body{
   align-self: center;
   margin-top: 45px;
 }
-.GetWeatherForm 
-input[type="text"],
-input[type="text"]:focus{
+.GetWeatherForm input[type="text"],
+input[type="text"]:focus {
   height: 45px;
   border: none;
   display: flex;
@@ -222,9 +221,9 @@ input[type="text"]:focus{
   outline: none;
 }
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus{
-    height: 45px;
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  height: 45px;
   border: none;
   display: flex;
   background-color: white;
@@ -275,33 +274,33 @@ input:-webkit-autofill:focus{
   font-size: 18px;
 }
 .GetWeatherForm button:hover {
-    height: 45px;
-    border: none;
-    display: flex;
-    align-self: center;
-    background-color: var(--main-color);
-    flex: 1;
-    border-radius: 15px;
-    color: white;
-    margin-left: 10px;
-    cursor: pointer;
-    transition: background-color ease-in;
-    transition-duration: 300ms;
-  }
-  .GetWeatherForm button:not(:hover) {
-    height: 45px;
-    border: none;
-    display: flex;
-    align-self: center;
-    background-color: var(--secondary-color);
-    flex: 1;
-    border-radius: 15px;
-    color: white;
-    margin-left: 10px;
-    cursor: pointer;
-    transition: background-color ease-out;
-    transition-duration: 300ms;
-  }
+  height: 45px;
+  border: none;
+  display: flex;
+  align-self: center;
+  background-color: var(--main-color);
+  flex: 1;
+  border-radius: 15px;
+  color: white;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color ease-in;
+  transition-duration: 300ms;
+}
+.GetWeatherForm button:not(:hover) {
+  height: 45px;
+  border: none;
+  display: flex;
+  align-self: center;
+  background-color: var(--secondary-color);
+  flex: 1;
+  border-radius: 15px;
+  color: white;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color ease-out;
+  transition-duration: 300ms;
+}
 .GetWeatherForm button:focus {
   outline: none;
 }
@@ -316,11 +315,11 @@ input:-webkit-autofill:focus{
   flex-wrap: nowrap;
 }
 .location {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-end;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 100%;
 }
 .locationIcon {
   display: flex;
@@ -339,139 +338,152 @@ input:-webkit-autofill:focus{
   font-weight: bold;
   margin-left: 10px;
 }
-.WeatherStatus{
-    display: flex;
-    align-self: center;
-    font-family: Arial, Helvetica, sans-serif;
-    color:  var(--secondary-color);
-    font-size: 22px;
-    font-weight: bold;
+.WeatherStatus {
+  display: flex;
+  align-self: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--secondary-color);
+  font-size: 22px;
+  font-weight: bold;
   margin-left: 30px;
 }
-.WeatherDes{
-    display: flex;
-    align-self: center;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #808080;
-    font-size: 18px;
-    font-weight: 600;
-    margin-left: 15px;
+.WeatherDes {
+  display: flex;
+  align-self: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #808080;
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 15px;
 }
-.currentTemp{
+.currentTemp {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-end;
   width: 100%;
 }
-.daily-Forecast-Container{
-    display: flex;
-  flex-direction: row;
+.daily-Forecast-Container {
+  display: flex;
+  flex-direction: column;
   flex-wrap: nowrap;
   align-content: center;
   align-self: center;
+  align-items: center;
   justify-content: space-between;
   margin: 0 auto;
   margin-top: 25px;
   width: 75%;
   height: auto;
   color: white;
-  position: relative;
-  padding-bottom: 200px;
+  padding-bottom: 5px;
 }
-.weatherCard{
-    display: flex;
-    flex-direction: column;
-    width: 15%;
-    height:250px;
-    background-color: var(--main-color);
-    border-radius: 20px;
- 
-    
+.weatherCard-Container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-self: center;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 100%;
 }
-.dailyTemp{
-display: flex;
-flex-direction: column;
-align-self: center;
-align-content: center;
-width: 75%;
-margin-top: 25px;
+.weatherCard {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  height: 250px;
+  background-color: var(--main-color);
+  border-radius: 20px;
 }
-.dailyTempMax{
-    display: flex;
-    justify-content: space-between;
-    align-self: center;
-    align-content: center;
-    align-items: center;
-    margin: 0 auto;
-    color:#DDFF00;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 20px;
-    margin-top: 2px;
-    margin-bottom: 2px;
+.dailyTemp {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-content: center;
+  width: 75%;
+  margin-top: 25px;
+}
+.dailyTempMax {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  align-content: center;
+  align-items: center;
+  margin: 0 auto;
+  color: #ddff00;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 .dailyTempMin {
-    display: flex;
-    justify-content: space-between;
-    align-self: center;
-    align-content: center;
-    align-items: center;
-    margin: 0 auto;
-    color:#0AFFEE;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    margin-top: 2px;
-    margin-bottom: 2px;
-}
-.tempTitle{
-    display: flex;
-    justify-content: space-between;
-    align-self: center;
-    align-items: center;
-    margin: 0 auto;
-    align-content: center;
-    color:rgb(255, 255, 255);
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    font-size: 12px;
-    margin-top: 2px;
-    margin-bottom: 2px;
-}
-.eachDayWeatherIcon{
-    display: flex;
-    justify-content: space-between;
-    align-self: center;
-    align-content: center;
-    margin-top: 5px;
-    /* border: 1px solid white; */
-}
-.dayName{
-    display: flex;
-    align-self: center;
-    align-content: center;
-    color:rgb(255, 255, 255);
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    margin-top: 20px;
-    margin-bottom: 0px;
-}
-.weatherCard:hover .chart {
   display: flex;
+  justify-content: space-between;
+  align-self: center;
+  align-content: center;
+  align-items: center;
+  margin: 0 auto;
+  color: #0affee;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
+.tempTitle {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  align-items: center;
+  margin: 0 auto;
+  align-content: center;
+  color: rgb(255, 255, 255);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.eachDayWeatherIcon {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  align-content: center;
+  margin-top: 5px;
+  /* border: 1px solid white; */
+}
+.dayName {
+  display: flex;
+  align-self: center;
+  align-content: center;
+  color: rgb(255, 255, 255);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+/* .weatherCard:hover .chart {
+  display: flex;
+} */
 .chart {
   display: none;
-  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
   align-self: center;
-  width: 220px;
-  height: 250px;
-  background-color: var(--secondary-color);
-  position:absolute;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 300px;
+  background-color: rgba(255, 115, 0, 0.555);
+  margin: 0 auto;
   border-radius: 25px;
-  margin-top: 280px;
-  transition:  width height 1000ms;
+  margin-top: 20px;
+  /* transition:  width height 1000ms; */
 }
 .App {
   text-align: center;

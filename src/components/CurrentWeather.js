@@ -19,7 +19,7 @@ class CurrentWeather extends React.Component {
                 <div className="WeatherStatus">{this.props.weather}</div>
                     <p style={{ color: "gray", fontSize: "14px", fontFamily: "Arial", fontWeight: "400", alignSelf: "center", justifyContent: "center", marginLeft: "15px" }}>
                         Current temprature:</p>
-                    <div className="WeatherDes"> {this.props.temp} &#8451;</div>
+                    <div className="WeatherDes"> {Math.round(this.props.temp)} &#8451;</div>
                     </div>
             </div>
         )
