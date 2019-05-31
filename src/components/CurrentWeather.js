@@ -13,14 +13,14 @@ class CurrentWeather extends React.Component {
                     <div className="locationName">
                         {this.props.city} {this.props.country} </div>
                     <img alt="" src={iconUrl} width="60px" height="60px"></img>
-                    
+
                 </div>
                 <div className="currentTemp">
-                <div className="WeatherStatus">{this.props.weather}</div>
+                    <div className="WeatherStatus">{this.props.weather}</div>
                     <p style={{ color: "gray", fontSize: "14px", fontFamily: "Arial", fontWeight: "400", alignSelf: "center", justifyContent: "center", marginLeft: "15px" }}>
                         Current temprature:</p>
                     <div className="WeatherDes"> {Math.round(this.props.temp)} &#8451;</div>
-                    </div>
+                </div>
             </div>
         )
     }

@@ -7,8 +7,8 @@ class ForecastDaily extends React.Component {
             showChart: this.props.showChart,
             temps: [],
             hours: [],
-            Max:[],
-            Min:[]
+            Max: [],
+            Min: []
         }
     ShowChart = (input) => {
         const temps = input.map(item => item.temp);
@@ -26,6 +26,7 @@ class ForecastDaily extends React.Component {
     }
     render() {
         const PassData = this.props.ForecastDaily;
+        //Customize the data for better قeadability
         const dayNum = PassData.map((item) => {
             return {
                 Hour: new Date(item.dt_txt).getHours(),
@@ -38,6 +39,7 @@ class ForecastDaily extends React.Component {
                 humidity: item.main.humidity
             };
         });
+        //Destructuring by the Unique number
         const d_num = [...new Set(dayNum.map(each => each.MonthDayNum))];
         const res = d_num.map(item => {
             const data_i = dayNum.filter(each => each.MonthDayNum === item)
@@ -51,9 +53,11 @@ class ForecastDaily extends React.Component {
         });
         return (
             <div className="daily-Forecast-Container">
+                {/* weather card */}
                 <div className="weatherCard-Container">
                     {res}
                 </div>
+                {/* Chart */}
                 <div style={{ display: this.state.showChart }} className="chart">
                     <Line width={650}
                         data={
@@ -103,7 +107,7 @@ class ForecastDaily extends React.Component {
                                         pointHitRadius: 10,
                                     }
                                 ],
-                                
+
                             }
                         }
                         options={{
@@ -112,7 +116,6 @@ class ForecastDaily extends React.Component {
                         }} />
                 </div>
             </div>
-
         )
     }
 }

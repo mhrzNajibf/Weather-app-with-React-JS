@@ -1,8 +1,7 @@
 import React from "react";
 
 const EeachDayForecast = (props) => {
-    // console.log("PROPS is ", props.data);
-
+    //Find the icon that most iterate in eacg day
     let counts = {};
     for (let i = 0; i < props.data.length; i++) {
         var num = props.data[i].icon;
@@ -16,6 +15,7 @@ const EeachDayForecast = (props) => {
             iconName = key;
         }
     }
+    //export each date weather info
     const DayInfo = props.data.map(eachDay => {
         const dayWeek = ['Sunday', 'Monday', 'Tuesday',
             'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -30,10 +30,8 @@ const EeachDayForecast = (props) => {
             day: dayWeek[eachDay.WeekDayNum]
         }
     })
-    // const chartClick = () => {
-    //     document.querySelector(".chart").style.display = "flex";
-    // }
     return (
+        //Use the parameter value inside the elements
         <div className="weatherCard" onClick={() => props.ShowChart(props.data)}>
             <div className="dayName"> {DayInfo[0].day} </div>
             <img alt="condition" className="eachDayWeatherIcon" src={DayInfo[0].iconUrl} width="100px" height="100px"></img>
