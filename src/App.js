@@ -5,7 +5,6 @@ import CurrentWeather from "./components/CurrentWeather";
 import './App.css';
 import ForecastDaily from "./components/ForecastDaily";
 
-
 const API_KEY = "ddc3f6acd6a4983de3c9095cd90878c4";
 class App extends React.Component {
   state = {
@@ -19,7 +18,8 @@ class App extends React.Component {
     humidity: null,
     icon: null,
     temp: null,
-    daily: []
+    daily: [],
+    chartData:[]
   }
   GetWeather = async (e) => {
     e.preventDefault();
@@ -35,9 +35,8 @@ class App extends React.Component {
       fetch(url)
         .then(value => value.json())
     )).then(data => {
-      const dailyHourChange = [0, 8, 16, 24, 32];
-      const forecast5Day = dailyHourChange.map((item) => [...data[1].list][item]);
-      console.log("AAAAAA", forecast5Day);
+      // const dailyHourChange = [0, 8, 16, 24, 32];
+      // const forecast5Day = dailyHourChange.map((item) => [...data[1].list][item]);
       this.setState({
         city: data[0].name,
         country: data[0].sys.country,
@@ -49,7 +48,8 @@ class App extends React.Component {
         humidity: data[0].main.humidity,
         icon: data[0].weather[0].icon,
         temp: data[0].main.temp,
-        daily: forecast5Day
+        daily: data[1].list,
+        chartData:data[1].list
       })
     }).catch(err => {
       console.log(err);
@@ -63,7 +63,7 @@ class App extends React.Component {
         <Header />
         <GetWeather GetWeather={this.GetWeather} />
         <CurrentWeather {...this.state} />
-        <ForecastDaily ForecastDaily={this.state.daily} />
+        <ForecastDaily ForecastDaily={this.state.daily} chartData={this.state.chartData} />
       </div>
     );
   }
